@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Chiara</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+      @keyframes scrollx {
+        0%   { transform: translateX(0) }
+        100% { transform: translateX(-50%) }
+      }
+      .animate-scroll-x {
+        animation: scrollx 40s linear infinite;
+      }
+      .pause-on-hover:hover .animate-scroll-x {
+        animation-play-state: paused;
+      }
+    }
+  </style>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+
+
+
+
+<body class="min-h-dvh bg-[#050816] text-slate-100 font-sans leading-[1.6]">
+
+    <!-- ===== HEADER ===== -->
+    <header class="sticky top-0 z-[1000] bg-[#050816]/80 backdrop-blur border-b border-white/10">
+        <div class="relative px-4 mx-auto">
+            <div class="w-full px-4 py-4 flex items-center justify-between">
+                <div class="flex flex-col">
+                    <h1 class="text-xl sm:text-2xl font-semibold tracking-tight">
+                        Chiara Olivieri
+                    </h1>
+                    <span class="text-xs sm:text-sm font-medium text-slate-400 tracking-[0.15em] uppercase mt-1">
+                        Développeuse Web
+                    </span>
+                </div>
+
+                <!-- Nav -->
+                <nav aria-label="Navigation principale" class="hidden sm:block">
+                    <ul class="list-none flex gap-3 m-0 p-0 items-center">
+                        <li>
+                            <a href="#competences"
+                                class="text-sm text-slate-200 px-3 py-1.5 rounded-full border border-white/10 hover:border-sky-400 hover:bg-sky-400/10 transition">
+                                Compétences
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../Portfolio/portfolio.html"
+                                class="text-sm font-semibold text-sky-400 px-3 py-1.5 rounded-full border border-sky-500/60 bg-sky-500/10 hover:bg-sky-500/20 transition">
+                                Mes projets
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="w-full">
+
+        <!-- ===== HERO / INTRO ===== -->
+        <section id="intro" data-aos="zoom-out"
+            class="relative bg-[url('img/montain.jpg')] bg-cover bg-center bg-no-repeat h-[calc(100vh-72px)] flex items-center justify-center">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-[#050816]"></div>
+            <div class="relative z-10 max-w-4xl mx-auto px-4 text-center flex flex-col items-center gap-6">
+                <p class="text-sm tracking-[0.3em] uppercase text-sky-300/80">
+                    Portfolio
+                </p>
+                <h1
+                    class="text-4xl sm:text-6xl lg:text-8xl font-semibold text-slate-100 drop-shadow-[0_10px_35px_rgba(0,0,0,0.8)]">
+                    Bonjour&nbsp;!
+                </h1>
+                <h2 class="text-xl sm:text-3xl lg:text-4xl font-medium text-slate-200/90">
+                    Bienvenue sur mon <span class="text-sky-300 font-semibold">Portfolio</span>
+                </h2>
+                <p class="max-w-xl text-sm sm:text-base text-slate-200/80 mt-2">
+                    Étudiante en reconversion vers le développement web, avec un parcours en architecture
+                    et une forte sensibilité pour le design et l’UX.
+                </p>
+            </div>
+
+            <div
+                class="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[#050816]">
+            </div>
+        </section>
+
+        <!-- ===== À PROPOS ===== -->
+        <section data-aos="fade-up" class="py-16">
+            <div class="max-w-5xl mx-auto px-4">
+                <div class="flex flex-col items-center mb-10">
+                    <p class="text-xs tracking-[0.35em] uppercase text-sky-400 mb-2">
+                        Présentation
+                    </p>
+                    <h2 class="sm:text-4xl md:text-4xl lg:text-[3rem] text-center font-semibold text-slate-50">
+                        À propos de moi
+                    </h2>
+                    <div class="mt-3 h-[2px] w-16 bg-gradient-to-r from-sky-400 to-purple-400 rounded-full"></div>
+                </div>
+
+                <div
+                    class="bg-[#0b1020] border border-white/10 rounded-2xl shadow-[0_18px_60px_rgba(0,0,0,0.6)] p-8 flex flex-col gap-8">
+                    <div class="w-full text-center">
+                        <div class="flex items-center justify-center gap-3 text-sm text-sky-300 font-medium">
+                            <span class="h-[1px] w-10 bg-sky-500/60"></span>
+                            <span>En recherche d'alternance</span>
+                            <span class="h-[1px] w-10 bg-sky-500/60"></span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="flex flex-col items-center text-center mx-3">
+                            <div
+                                class="relative w-[230px] h-[230px] sm:w-[260px] sm:h-[260px] rounded-full overflow-hidden shadow-[0_16px_50px_rgba(0,0,0,0.7)] ring-2 ring-sky-500/40">
+                                <img src="img/Photo CV.jpg" alt="photo de profil" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="flex justify-center gap-4 mt-4">
+                                <a target="_blank" href="https://github.com/ChiaraOlivieri"
+                                    class="inline-flex w-10 h-10 items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-sky-500/10 hover:border-sky-400 transition">
+                                    <img src="img/github.png" alt="github" class="w-6 h-6 invert brightness-0" />
+                                </a>
+
+                                </a>
+                                <a target="_blank"
+                                    href="https://www.linkedin.com/in/chiara-olivieri-development-webdevelopment-creativity"
+                                    class="inline-flex w-10 h-10 items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-sky-500/10 hover:border-sky-400 transition">
+                                    <img src="img/linkedin.png" alt="linkedin" class="w-6 h-6" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 text-left space-y-3">
+                            <h3 class="text-sm font-semibold tracking-[0.2em] uppercase text-sky-300">
+                                Développeuse Web
+                            </h3>
+                            <p class="text-sm text-slate-300/90 italic">
+                                Contrat d’apprentissage · 33 mois
+                            </p>
+                            <p class="text-sm sm:text-base text-slate-200/85">
+                                J’entame avec Epitech Nice une reconversion dans le numérique, en classe préparatoire au
+                                Master of Science.
+                            </p>
+                            <p class="text-sm sm:text-base text-slate-200/85">
+                                Grâce à mon parcours en architecture, je maîtrise la gestion de projet, la créativité
+                                sous
+                                contraintes et la présentation de concepts complexes. Je souhaite désormais mettre à
+                                profit ces
+                                compétences en tant que développeuse <span class="text-sky-300 font-medium">full
+                                    stack</span>,
+                                en alliant technique et sens du design.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FORMATION ===== -->
+        <section data-aos="fade-up" class="py-16">
+            <div class="max-w-5xl mx-auto px-4">
+                <div class="flex flex-col items-center mb-10">
+                    <p class="text-xs tracking-[0.35em] uppercase text-sky-400 mb-2">
+                        Parcours
+                    </p>
+                    <h2 class="sm:text-4xl md:text-4xl lg:text-[3rem] text-center font-semibold text-slate-50">
+                        Ma formation
+                    </h2>
+                    <div class="mt-3 h-[2px] w-16 bg-gradient-to-r from-sky-400 to-purple-400 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div
+                        class="bg-[#0b1020] border border-white/10 rounded-2xl p-6 shadow-[0_14px_45px_rgba(0,0,0,0.6)] hover:-translate-y-1 hover:border-sky-500/70 transition-transform">
+                        <h3 class="text-sm font-semibold text-slate-100 text-center mb-3">
+                            Pré-MSc EPITECH Nice (2025-2028)
+                        </h3>
+                        <ul class="pl-5 list-disc text-sm text-slate-300 space-y-2">
+                            <li>Autoformation : Python, HTML, CSS, C, C++, SQL (OpenClassrooms)</li>
+                            <li>Projets personnels en développement web et programmation</li>
+                        </ul>
+                    </div>
+
+                    <div
+                        class="bg-[#0b1020] border border-white/10 rounded-2xl p-6 shadow-[0_14px_45px_rgba(0,0,0,0.6)] hover:-translate-y-1 hover:border-sky-500/70 transition-transform">
+                        <h3 class="text-sm font-semibold text-slate-100 text-center mb-3">
+                            Licence Architecture DEEA · ENSA Toulouse (2022-2025)
+                        </h3>
+                        <ul class="pl-5 list-disc text-sm text-slate-300 space-y-2">
+                            <li>Gestion de projets et respect de contraintes</li>
+                            <li>Modélisation et dessin 2D/3D</li>
+                            <li>Présentation et défense de projets devant jury et professionnels</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EXPÉRIENCES ===== -->
+        <section data-aos="fade-up" class="py-16">
+            <div class="max-w-5xl mx-auto px-4">
+                <div class="flex flex-col items-center mb-10">
+                    <p class="text-xs tracking-[0.35em] uppercase text-sky-400 mb-2">
+                        Parcours pro
+                    </p>
+                    <h2 class="sm:text-4xl md:text-4xl lg:text-[3rem] text-center font-semibold text-slate-50">
+                        Mes expériences professionnelles
+                    </h2>
+                    <div class="mt-3 h-[2px] w-16 bg-gradient-to-r from-sky-400 to-purple-400 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div
+                        class="bg-[#0b1020] border border-white/10 rounded-2xl p-6 shadow-[0_14px_45px_rgba(0,0,0,0.6)] hover:-translate-y-1 hover:border-sky-500/60 transition-transform">
+                        <p class="text-xs text-sky-300 font-medium mb-1">Depuis 2022</p>
+                        <h3 class="text-sm font-semibold text-slate-100 mb-3">
+                            Infographiste · Freelance
+                        </h3>
+                        <ul class="ml-4 list-disc text-sm text-slate-300 space-y-2">
+                            <li>Relation client et compréhension des besoins</li>
+                            <li>Créativité appliquée aux contraintes techniques</li>
+                            <li>Autonomie et gestion de projet</li>
+                        </ul>
+                    </div>
+
+                    <div
+                        class="bg-[#0b1020] border border-white/10 rounded-2xl p-6 shadow-[0_14px_45px_rgba(0,0,0,0.6)] hover:-translate-y-1 hover:border-sky-500/60 transition-transform">
+                        <p class="text-xs text-sky-300 font-medium mb-1">07/2024</p>
+                        <h3 class="text-sm font-semibold text-slate-100 mb-3">
+                            Assistante d’architecte · Deverini Architectes, Monaco
+                        </h3>
+                        <ul class="ml-4 list-disc text-sm text-slate-300 space-y-2">
+                            <li>Projets de grande envergure (villas, appartements de luxe...)</li>
+                            <li>Dessin architectural, suivi de chantier, coordination</li>
+                            <li>Application de normes locales, techniques et juridiques</li>
+                        </ul>
+                    </div>
+
+                    <div
+                        class="bg-[#0b1020] border border-white/10 rounded-2xl p-6 shadow-[0_14px_45px_rgba(0,0,0,0.6)] hover:-translate-y-1 hover:border-sky-500/60 transition-transform">
+                        <p class="text-xs text-sky-300 font-medium mb-1">07/2023 – 08/2023</p>
+                        <h3 class="text-sm font-semibold text-slate-100 mb-3">
+                            Assistante cellule synthèse · Bureau d’études EVOS, Engeco Monaco
+                        </h3>
+                        <ul class="ml-4 list-disc text-sm text-slate-300 space-y-2">
+                            <li>Mise à jour des plans d’exécution avec l’équipe synthèse</li>
+                            <li>Réalisation de métrés et tâches techniques diverses</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== COMPÉTENCES ===== -->
+        <section data-aos="fade-up" id="competences" class="py-16">
+            <div class="max-w-5xl mx-auto px-4">
+                <div class="flex flex-col items-center mb-10">
+                    <p class="text-xs tracking-[0.35em] uppercase text-sky-400 mb-2">
+                        Compétences
+                    </p>
+                    <h2 class="sm:text-4xl md:text-4xl lg:text-[3rem] text-center font-semibold text-slate-50">
+                        Mes compétences
+                    </h2>
+                    <div class="mt-3 h-[2px] w-16 bg-gradient-to-r from-sky-400 to-purple-400 rounded-full"></div>
+                </div>
+
+                <!-- SOFT SKILLS -->
+                <div class="w-full bg-transparent py-6">
+                    <h3 class="text-2xl font-semibold mb-6 text-center text-slate-100">
+                        Soft Skills
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 grid-rows-2 gap-5 max-w-5xl mx-auto">
+                        <div class="flex items-center bg-[#0b1020] border border-white/10 rounded-2xl shadow-md p-4">
+                            <div class="w-2 h-2 bg-sky-400 rounded-full mr-3"></div>
+                            <p class="text-sm font-medium text-slate-200">Résolution de problèmes complexes</p>
+                        </div>
+                        <div class="flex items-center bg-[#0b1020] border border-white/10 rounded-2xl shadow-md p-4">
+                            <div class="w-2 h-2 bg-sky-400 rounded-full mr-3"></div>
+                            <p class="text-sm font-medium text-slate-200">Travail en équipe pluridisciplinaire</p>
+                        </div>
+                        <div class="flex items-center bg-[#0b1020] border border-white/10 rounded-2xl shadow-md p-4">
+                            <div class="w-2 h-2 bg-sky-400 rounded-full mr-3"></div>
+                            <p class="text-sm font-medium text-slate-200">Rigueur et sens du détail</p>
+                        </div>
+                        <div class="flex items-center bg-[#0b1020] border border-white/10 rounded-2xl shadow-md p-4">
+                            <div class="w-2 h-2 bg-sky-400 rounded-full mr-3"></div>
+                            <p class="text-sm font-medium text-slate-200">Créativité et innovation</p>
+                        </div>
+                        <div class="flex items-center bg-[#0b1020] border border-white/10 rounded-2xl shadow-md p-4">
+                            <div class="w-2 h-2 bg-sky-400 rounded-full mr-3"></div>
+                            <p class="text-sm font-medium text-slate-200">Gestion de projets sous contraintes</p>
+                        </div>
+                        <div class="flex items-center bg-[#0b1020] border border-white/10 rounded-2xl shadow-md p-4">
+                            <div class="w-2 h-2 bg-sky-400 rounded-full mr-3"></div>
+                            <p class="text-sm font-medium text-slate-200">Présentation et défense de projets</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HARD SKILLS -->
+                <div class="mt-12 overflow-hidden">
+                    <div class="relative">
+                        <h3 class="text-2xl font-semibold mb-6 text-center text-slate-100">
+                            Hard Skills
+                        </h3>
+
+                        <div class="pause-on-hover">
+                            <div class="flex gap-6 animate-scroll-x pl-20 pr-20">
+                                <!-- HTML -->
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/html.png" alt="HTML" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        HTML
+                                    </div>
+                                </div>
+
+                                <!-- CSS -->
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/css.svg.png" alt="CSS" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        CSS
+                                    </div>
+                                </div>
+
+                                <!-- GitHub -->
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/github.png" alt="GitHub" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        GitHub
+                                    </div>
+                                </div>
+
+                                <!-- JS -->
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/js.png" alt="JavaScript" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        JavaScript
+                                    </div>
+                                </div>
+
+                                <!-- SQL -->
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/sql.jpeg" alt="SQL" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        SQL
+                                    </div>
+                                </div>
+
+                                <!-- Python -->
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/python.png" alt="Python" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Python
+                                    </div>
+                                </div>
+
+                                <!-- Angular -->
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/angular.png" alt="Angular" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Angular
+                                    </div>
+                                </div>
+
+                                <!-- Figma -->
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/Figma.png" alt="Figma" class="w-full h-full object-contain scale-75">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Figma
+                                    </div>
+                                </div>
+
+                                <!-- Adobe -->
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/adobe.jpeg" alt="Adobe" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Adobe
+                                    </div>
+                                </div>
+
+                                <!-- Procreate -->
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/procreate.jpg" alt="Procreate" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Procreate
+                                    </div>
+                                </div>
+
+                                <!-- SketchUp -->
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/sketchup.jpg" alt="SketchUp" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        SketchUp
+                                    </div>
+                                </div>
+
+                                <!-- Archicad -->
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/archicad.png" alt="Archicad"
+                                        class="w-full h-full object-contain scale-75">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Archicad
+                                    </div>
+                                </div>
+
+                                <!-- Revit -->
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/revit.png" alt="Revit" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Revit
+                                    </div>
+                                </div>
+
+                                <!-- D5 Render -->
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/d5.png" alt="D5Render" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        D5 Render
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section data-aos="fade-up" class="py-16">
+            <div class="max-w-5xl mx-auto px-4">
+                <div class="flex flex-col items-center mb-8">
+                    <p class="text-xs tracking-[0.35em] uppercase text-sky-400 mb-2">
+                        Contact
+                    </p>
+                    <h2 class="sm:text-4xl md:text-4xl lg:text-[3rem] text-center font-semibold text-slate-50">
+                        Contactez-moi&nbsp;!
+                    </h2>
+                    <div class="mt-3 h-[2px] w-16 bg-gradient-to-r from-sky-400 to-purple-400 rounded-full"></div>
+                </div>
+
+                <div
+                    class="max-w-xl mx-auto flex justify-center rounded-2xl items-center gap-3 bg-[#0b1020] border border-white/10 shadow-[0_14px_45px_rgba(0,0,0,0.7)] p-5">
+                    <h3 class="text-sm sm:text-base text-slate-200 m-0 whitespace-nowrap">
+                        Mon mail&nbsp;:
+                    </h3>
+                    <a target="_blank" href="mailto:chiara.olivieri@epitech.eu"
+                        class="text-sm sm:text-base text-sky-300 no-underline px-3 py-1.5 border border-sky-500/70 rounded-full bg-sky-500/10 hover:bg-sky-500/20 hover:text-sky-100 transition">
+                        chiara.olivieri@epitech.eu
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="border-t border-white/10 bg-[#050816]/95 w-full text-slate-300">
+        <div class="mx-auto p-5 sm:p-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+            <div class="text-left">
+                <h3 class="text-[15px] mb-2 font-semibold text-slate-100">Liens</h3>
+                <ul class="list-none p-0 m-0 space-y-1.5 text-sm">
+                    <li>
+                        <a href="https://www.linkedin.com/in/chiara-olivieri-development-webdevelopment-creativity"
+                            target="_blank" class="text-inherit no-underline transition-opacity hover:opacity-70">
+                            LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/ChiaraOlivieri" target="_blank"
+                            class="text-inherit no-underline transition-opacity hover:opacity-70">
+                            GitHub
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="text-left sm:text-right text-sm">
+                <h3 class="text-[15px] mb-2 font-semibold text-slate-100">Contact</h3>
+                <p class="my-1.5">
+                    <a href="mailto:chiara.olivieri@epitech.eu"
+                        class="text-inherit no-underline transition-opacity hover:opacity-70">
+                        chiara.olivieri@epitech.eu
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
