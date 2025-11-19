@@ -2,114 +2,332 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio – Chiara Olivieri</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Projets de Chiara</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="min-h-dvh bg-[#050816] text-slate-100 font-sans">
 
-    <!-- ====== HEADER ====== -->
-    <header>
-        <div class="title">
-            <h1>Chiara Olivieri</h1>
-            <span>/ DÉVELOPPEUSE WEB</span>
-        </div>
-        <nav class="main-nav" aria-label="Navigation principale">
-            <ul>
-                <li><a href="../Presentation/index.html">Mon parcours</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- ===== HEADER ===== -->
+  <header class="sticky top-0 z-[1000] bg-[#050816]/90 backdrop-blur border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex flex-col">
+        <h1 class="text-xl sm:text-2xl font-semibold tracking-tight">
+          Chiara Olivieri
+        </h1>
+        <span class="text-xs sm:text-sm font-medium text-slate-400 tracking-[0.18em] uppercase mt-1">
+          Développeuse Web
+        </span>
+      </div>
 
-    <!-- ====== PROJETS ====== -->
-    <section id="projets" class="projects-hero">
-        <div class="wrap">
-            <h2 class="section-title">MES PROJETS</h2>
+      <nav aria-label="Navigation principale" class="hidden sm:block">
+        <ul class="flex gap-3 items-center">
+          <li>
+            <a href="../Presentation/index.html"
+               class="text-sm text-sky-300 px-3 py-1.5 rounded-full border border-sky-500/70 bg-sky-500/10 hover:bg-sky-500/20 hover:text-sky-50 transition">
+              Mon parcours
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-            <!-- ====== CARROUSEL ====== -->
-            <div class="carousel" data-carousel>
-                <button class="nav-btn prev" aria-label="Projet précédent" data-prev>&larr;</button>
-                <button class="nav-btn next" aria-label="Projet suivant" data-next>&rarr;</button>
+  <main class="w-full py-16">
+    <!-- ===== SECTION PROJETS ===== -->
+    <section id="projets" class="max-w-6xl mx-auto px-4 space-y-10" data-aos="fade-up">
+      <!-- Titre -->
+      <div class="flex flex-col items-center mb-4">
+        <p class="text-xs tracking-[0.35em] uppercase text-sky-400 mb-2">
+          Portfolio
+        </p>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-slate-50 text-center">
+          MES PROJETS
+        </h2>
+        <div class="mt-3 h-[2px] w-16 bg-gradient-to-r from-sky-400 to-purple-400 rounded-full"></div>
+      </div>
 
-                <div class="track" data-track>
-                    <a class="slide"
-                        href="https://www.behance.net/moodboard/222055911/Peintures-Ralisations-personnelles"
-                        target="_blank" rel="noopener">
-                        <figure class="project-card">
-                            <img src="./img/macaron.jpg" alt="Projet 1">
-                            <figcaption>Peintures</figcaption>
-                        </figure>
-                    </a>
+      <!-- CARROUSEL -->
+      <div class="relative flex flex-col items-center gap-6" data-aos="fade-up" data-aos-delay="150">
+        <!-- Wrapper pour centrer et limiter à 3 cartes sur desktop -->
+        <div
+          class="relative overflow-hidden w-full max-w-sm sm:max-w-2xl lg:max-w-4xl bg-[#050816] border border-white/10 rounded-3xl px-6 py-8 shadow-[0_18px_55px_rgba(0,0,0,0.7)]">
+          
+          <!-- Flèches -->
+          <button
+            type="button"
+            aria-label="Projets précédents"
+            class="group absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full border border-white/15 bg-black/40 flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed enabled:hover:bg-sky-500/20 enabled:hover:border-sky-400 transition"
+            data-prev>
+            <span class="text-lg leading-none text-slate-100 group-disabled:text-slate-400">
+              ‹
+            </span>
+          </button>
 
-                    <a class="slide" href="https://www.behance.net/moodboard/222055855/Projets-darchitecture"
-                        target="_blank" rel="noopener">
-                        <figure class="project-card">
-                            <img src="./img/archi.jpg" alt="Projet 2">
-                            <figcaption>Projets d'architecture</figcaption>
-                        </figure>
-                    </a>
+          <button
+            type="button"
+            aria-label="Projets suivants"
+            class="group absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full border border-white/15 bg-black/40 flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed enabled:hover:bg-sky-500/20 enabled:hover:border-sky-400 transition"
+            data-next>
+            <span class="text-lg leading-none text-slate-100 group-disabled:text-slate-400">
+              ›
+            </span>
+          </button>
 
-                    <a class="slide"
-                        href="https://www.behance.net/moodboard/222055929/Crations-digitales-Ralisations-personnelles"
-                        target="_blank" rel="noopener">
-                        <figure class="project-card">
-                            <img src="./img/fraise.jpg" alt="Projet 3">
-                            <figcaption>Créations digitales</figcaption>
-                        </figure>
-                    </a>
+          <!-- Track -->
+          <div class="overflow-hidden">
+            <div class="flex gap-4 transition-transform duration-300 ease-in-out" data-track>
+              <!-- Slide 1 -->
+              <a href="https://www.behance.net/moodboard/222055911/Peintures-Ralisations-personnelles"
+                 target="_blank" rel="noopener"
+                 class="slide block flex-shrink-0 w-full sm:w-1/2 lg:w-1/3">
+                <figure
+                  class="h-full flex flex-col bg-[#0b1020] border border-white/10 rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:border-sky-400/70 hover:shadow-[0_16px_55px_rgba(0,0,0,0.8)] transition">
+                  <div class="w-full aspect-square overflow-hidden">
+                    <img src="./img/macaron.jpg" alt="Peintures"
+                         class="w-full h-full object-cover" />
+                  </div>
+                  <figcaption
+                    class="text-center text-sm sm:text-base font-semibold text-slate-100 py-3 border-t border-white/5">
+                    Peintures
+                  </figcaption>
+                </figure>
+              </a>
 
-                    <a class="slide" href="https://www.behance.net/moodboard/222055957/Projets-Twitch" target="_blank"
-                        rel="noopener">
-                        <figure class="project-card">
-                            <img src="./img/mk.jpg" alt="Projet 4">
-                            <figcaption>Projets Twitch</figcaption>
-                        </figure>
-                    </a>
+              <!-- Slide 2 -->
+              <a href="https://www.behance.net/moodboard/222055855/Projets-darchitecture"
+                 target="_blank" rel="noopener"
+                 class="slide block flex-shrink-0 w-full sm:w-1/2 lg:w-1/3">
+                <figure
+                  class="h-full flex flex-col bg-[#0b1020] border border-white/10 rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:border-sky-400/70 hover:shadow-[0_16px_55px_rgba(0,0,0,0.8)] transition">
+                  <div class="w-full aspect-square overflow-hidden">
+                    <img src="./img/archi.jpg" alt="Projets d'architecture"
+                         class="w-full h-full object-cover" />
+                  </div>
+                  <figcaption
+                    class="text-center text-sm sm:text-base font-semibold text-slate-100 py-3 border-t border-white/5">
+                    Projets d'architecture
+                  </figcaption>
+                </figure>
+              </a>
 
-                    <a class="slide" href="https://www.behance.net/moodboard/222055891/Dessins-Ralisations-personnelles"
-                        target="_blank" rel="noopener">
-                        <figure class="project-card">
-                            <img src="./img/fraisechoc.jpg" alt="Projet 5">
-                            <figcaption>Dessins</figcaption>
-                        </figure>
-                    </a>
-                </div>
+              <!-- Slide 3 -->
+              <a href="https://www.behance.net/moodboard/222055929/Crations-digitales-Ralisations-personnelles"
+                 target="_blank" rel="noopener"
+                 class="slide block flex-shrink-0 w-full sm:w-1/2 lg:w-1/3">
+                <figure
+                  class="h-full flex flex-col bg-[#0b1020] border border-white/10 rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:border-sky-400/70 hover:shadow-[0_16px_55px_rgba(0,0,0,0.8)] transition">
+                  <div class="w-full aspect-square overflow-hidden">
+                    <img src="./img/fraise.jpg" alt="Créations digitales"
+                         class="w-full h-full object-cover" />
+                  </div>
+                  <figcaption
+                    class="text-center text-sm sm:text-base font-semibold text-slate-100 py-3 border-t border-white/5">
+                    Créations digitales
+                  </figcaption>
+                </figure>
+              </a>
 
-                <div class="dots" data-dots aria-label="Pagination du carrousel"></div>
+              <!-- Slide 4 -->
+              <a href="https://www.behance.net/moodboard/222055957/Projets-Twitch"
+                 target="_blank" rel="noopener"
+                 class="slide block flex-shrink-0 w-full sm:w-1/2 lg:w-1/3">
+                <figure
+                  class="h-full flex flex-col bg-[#0b1020] border border-white/10 rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:border-sky-400/70 hover:shadow-[0_16px_55px_rgba(0,0,0,0.8)] transition">
+                  <div class="w-full aspect-square overflow-hidden">
+                    <img src="./img/mk.jpg" alt="Projets Twitch"
+                         class="w-full h-full object-cover" />
+                  </div>
+                  <figcaption
+                    class="text-center text-sm sm:text-base font-semibold text-slate-100 py-3 border-t border-white/5">
+                    Projets Twitch
+                  </figcaption>
+                </figure>
+              </a>
+
+              <!-- Slide 5 -->
+              <a href="https://www.behance.net/moodboard/222055891/Dessins-Ralisations-personnelles"
+                 target="_blank" rel="noopener"
+                 class="slide block flex-shrink-0 w-full sm:w-1/2 lg:w-1/3">
+                <figure
+                  class="h-full flex flex-col bg-[#0b1020] border border-white/10 rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:border-sky-400/70 hover:shadow-[0_16px_55px_rgba(0,0,0,0.8)] transition">
+                  <div class="w-full aspect-square overflow-hidden">
+                    <img src="./img/fraisechoc.jpg" alt="Dessins"
+                         class="w-full h-full object-cover" />
+                  </div>
+                  <figcaption
+                    class="text-center text-sm sm:text-base font-semibold text-slate-100 py-3 border-t border-white/5">
+                    Dessins
+                  </figcaption>
+                </figure>
+              </a>
             </div>
+          </div>
+
+          <!-- Dots -->
+          <div class="flex justify-center gap-2 mt-6" data-dots aria-label="Pagination du carrousel"></div>
         </div>
+      </div>
     </section>
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-col footer-legal">
-      <h3>Mentions légales</h3>
-      <ul>
-        <li>Mention 1</li>
-        <li>Mention 2</li>
-        <li>Mention 3</li>
-      </ul>
-    </div>
-    <div class="footer-col footer-links">
-      <h3>Liens</h3>
-      <ul>
-        <li><a href="https://www.linkedin.com/in/chiara-olivieri-development-webdevelopment-creativity"
-            target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/ChiaraOlivieri" target="_blank">GitHub</a></li>
-      </ul>
-    </div>
-    <div class="footer-col footer-contact">
-      <h3>Contact</h3>
-      <p>
-        <a href="mailto:chiara.olivieri@epitech.eu">chiara.olivieri@epitech.eu</a>
-      </p>
-    </div>
-  </div>
-</footer>
+  </main>
 
+  <!-- ===== FOOTER ===== -->
+  <footer class="border-t border-white/10 bg-[#050816]/95 w-full text-slate-300 mt-10">
+    <div
+      class="max-w-6xl mx-auto p-5 sm:p-8 grid grid-cols-1 sm:grid-cols-3 gap-8 text-sm">
+      <div>
+        <h3 class="text-[15px] mb-2 font-semibold text-slate-100">Mentions légales</h3>
+        <ul class="space-y-1.5">
+          <li>Mention 1</li>
+          <li>Mention 2</li>
+          <li>Mention 3</li>
+        </ul>
+      </div>
+      <div class="text-center sm:text-left">
+        <h3 class="text-[15px] mb-2 font-semibold text-slate-100">Liens</h3>
+        <ul class="space-y-1.5">
+          <li>
+            <a href="https://www.linkedin.com/in/chiara-olivieri-development-webdevelopment-creativity"
+               target="_blank"
+               class="text-inherit no-underline hover:opacity-70">
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ChiaraOlivieri"
+               target="_blank"
+               class="text-inherit no-underline hover:opacity-70">
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="text-left sm:text-right">
+        <h3 class="text-[15px] mb-2 font-semibold text-slate-100">Contact</h3>
+        <p>
+          <a href="mailto:chiara.olivieri@epitech.eu"
+             class="text-inherit no-underline hover:opacity-70">
+            chiara.olivieri@epitech.eu
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
 
+  <!-- AOS + CARROUSEL SCRIPT -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // ===== CARROUSEL =====
+    (function () {
+      const root = document.querySelector("[data-track]");
+      if (!root) return;
+
+      const track = root;
+      const prevBtn = document.querySelector("[data-prev]");
+      const nextBtn = document.querySelector("[data-next]");
+      const dotsBox = document.querySelector("[data-dots]");
+      const slides = Array.from(document.querySelectorAll(".slide"));
+
+      let currentIndex = 0;
+      let visible = 1; // sera recalculé
+      let maxIndex = 0;
+
+      function computeVisible() {
+        const width = window.innerWidth;
+        if (width >= 1024) visible = 3;
+        else if (width >= 640) visible = 2;
+        else visible = 1;
+        maxIndex = Math.max(0, slides.length - visible);
+        if (currentIndex > maxIndex) currentIndex = maxIndex;
+        updatePosition();
+        updateButtons();
+        buildDots();
+      }
+
+      function updatePosition() {
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 0);
+        const offset = -(slideWidth + gap) * currentIndex;
+        track.style.transform = `translateX(${offset}px)`;
+      }
+
+      function updateButtons() {
+        // prev grisé au début
+        if (currentIndex === 0) {
+          prevBtn.disabled = true;
+        } else {
+          prevBtn.disabled = false;
+        }
+        // next grisé seulement si on est revenu au début ET qu'il n'y a qu'une "page"
+        // sinon, toujours cliquable (avec wrap)
+        nextBtn.disabled = (slides.length <= visible);
+      }
+
+      function buildDots() {
+        dotsBox.innerHTML = "";
+        const pages = maxIndex + 1;
+        for (let i = 0; i < pages; i++) {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className =
+            "w-2 h-2 rounded-full border border-slate-500/70 bg-slate-700/60 aria-[current=true]:bg-sky-400 aria-[current=true]:border-sky-400";
+          btn.setAttribute("aria-current", i === currentIndex ? "true" : "false");
+          btn.addEventListener("click", () => {
+            currentIndex = i;
+            updatePosition();
+            updateDotsOnly();
+            updateButtons();
+          });
+          dotsBox.appendChild(btn);
+        }
+      }
+
+      function updateDotsOnly() {
+        const buttons = dotsBox.querySelectorAll("button");
+        buttons.forEach((b, i) => {
+          b.setAttribute("aria-current", i === currentIndex ? "true" : "false");
+        });
+      }
+
+      prevBtn.addEventListener("click", () => {
+        if (currentIndex === 0) return;
+        currentIndex -= 1;
+        updatePosition();
+        updateButtons();
+        updateDotsOnly();
+      });
+
+      nextBtn.addEventListener("click", () => {
+        if (maxIndex === 0) return;
+        if (currentIndex >= maxIndex) {
+          // fin → revient au début
+          currentIndex = 0;
+        } else {
+          currentIndex += 1;
+        }
+        updatePosition();
+        updateButtons();
+        updateDotsOnly();
+      });
+
+      window.addEventListener("resize", () => {
+        // petit timeout pour laisser le layout se recalculer
+        setTimeout(computeVisible, 150);
+      });
+
+      // init
+      computeVisible();
+    })();
+  </script>
 </body>
 
 </html>
