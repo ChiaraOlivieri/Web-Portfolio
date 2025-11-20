@@ -11,12 +11,11 @@
     <style type="text/tailwindcss">
         @layer utilities {
             @keyframes scrollx {
-                /* On déplace le contenu de 0% à -50%. Le contenu doit être dupliqué pour que 50% soit exactement la fin de la première copie. */
                 0%   { transform: translateX(0) }
                 100% { transform: translateX(-50%) }
             }
             .animate-scroll-x {
-                animation: scrollx 160s linear infinite; /* J'ai conservé votre vitesse de 40s */
+                animation: scrollx 160s linear infinite;
             }
             .pause-on-hover:hover .animate-scroll-x {
                 animation-play-state: paused;

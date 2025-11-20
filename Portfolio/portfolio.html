@@ -13,23 +13,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #050816; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #475569; }
 
-        /* Configuration du Carrousel Large */
         .swiper {
             width: 100%;
             padding-top: 20px;
             padding-bottom: 40px;
         }
 
-        /* Conteneur pour permettre le positionnement relatif des flèches */
         .swiper-web-container {
             position: relative;
-            padding: 0 50px; /* Espace pour les flèches */
+            padding: 0 50px;
         }
 
         .swiper-slide {
@@ -50,7 +47,6 @@
             background-color: #0b1020;
         }
 
-        /* Conteneur de l'image (par défaut pour Web) */
         .swiper-slide .image-container {
             width: 100%;
             aspect-ratio: 21/9; 
@@ -58,15 +54,12 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Conteneur de l'image pour les projets créatifs (Aspect carré sur mobile/tablette) */
         .swiperCreative .swiper-slide .image-container {
             aspect-ratio: 1/1; 
         }
 
-        /* Styles pour Grand Écran */
         @media (min-width: 1024px) {
             
-            /* Styles généraux/Projets Web */
             .swiperWeb .swiper-slide {
                 width: 75%; 
             }
@@ -74,14 +67,12 @@
                 height: 300px; 
             }
             
-            /* Univers Créatif (Surcharge pour cartes plus grandes et images carrées) */
             .swiperCreative .swiper-slide {
                 width: 400px; 
                 height: 400px; 
                 aspect-ratio: 1/1; 
                 flex-direction: row; 
             }
-            /* Assurer que le conteneur image prend toute la place du bloc */
             .swiperCreative .swiper-slide .image-container {
                 height: 100%; 
                 aspect-ratio: 1/1;
@@ -99,24 +90,20 @@
             background-color: transparent; 
         }
 
-        /* Aligner les images des projets Web par le haut */
         .swiperWeb .swiper-slide img {
             object-position: top; 
         }
 
-        /* Zoom très léger au survol pour les images des projets Web */
         .swiperWeb .swiper-slide:hover img {
             transform: scale(1.02); 
         }
         
-        /* Surcharge SPÉCIFIQUE pour les images de l'Univers Créatif */
         .swiperCreative .swiper-slide img {
             object-fit: cover; 
             transform: none !important; 
             object-position: center; 
         }
         
-        /* Contenu du texte créatif (pour le mettre par-dessus l'image) */
         .swiperCreative .text-content {
             position: absolute;
             bottom: 0;
@@ -127,17 +114,14 @@
             z-index: 10;
         }
         
-        /* Effet de survol général pour les cartes */
         .swiper-slide:hover {
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); 
             transform: translateY(-5px); 
         }
 
-        /* Pagination custom */
         .swiper-pagination-bullet { background: white; opacity: 0.3; }
         .swiper-pagination-bullet-active { background: #38bdf8; opacity: 1; }
         
-        /* Styles pour les flèches de navigation */
         .swiper-button-next-web, .swiper-button-prev-web {
             color: #38bdf8; 
             width: 35px;
@@ -358,7 +342,6 @@ Technologies : Azure AI Foundry, React, Vite.js.              </p>
     <script>
         AOS.init();
 
-        // Configuration de base pour les sliders
         const baseConfig = {
             effect: "coverflow",
             grabCursor: true,
@@ -375,7 +358,6 @@ Technologies : Azure AI Foundry, React, Vite.js.              </p>
             keyboard: true,
         };
 
-        // Init Slider Web
         new Swiper(".swiperWeb", {
             ...baseConfig,
             spaceBetween: 30,
@@ -394,7 +376,6 @@ Technologies : Azure AI Foundry, React, Vite.js.              </p>
             },
         });
 
-        // Init Slider Créatif
         new Swiper(".swiperCreative", {
             ...baseConfig,
             initialSlide: 2, 
