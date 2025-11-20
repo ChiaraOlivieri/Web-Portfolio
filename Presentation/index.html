@@ -6,35 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Chiara</title>
 
-    <!-- Tailwind CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <style type="text/tailwindcss">
         @layer utilities {
-      @keyframes scrollx {
-        0%   { transform: translateX(0) }
-        100% { transform: translateX(-50%) }
-      }
-      .animate-scroll-x {
-        animation: scrollx 40s linear infinite;
-      }
-      .pause-on-hover:hover .animate-scroll-x {
-        animation-play-state: paused;
-      }
-    }
-  </style>
+            @keyframes scrollx {
+                /* On déplace le contenu de 0% à -50%. Le contenu doit être dupliqué pour que 50% soit exactement la fin de la première copie. */
+                0%   { transform: translateX(0) }
+                100% { transform: translateX(-50%) }
+            }
+            .animate-scroll-x {
+                animation: scrollx 160s linear infinite; /* J'ai conservé votre vitesse de 40s */
+            }
+            .pause-on-hover:hover .animate-scroll-x {
+                animation-play-state: paused;
+            }
+        }
+    </style>
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
-
-
-
-
 <body class="min-h-dvh bg-[#050816] text-slate-100 font-sans leading-[1.6]">
 
-    <!-- ===== HEADER ===== -->
     <header class="sticky top-0 z-[1000] bg-[#050816]/80 backdrop-blur border-b border-white/10">
         <div class="relative px-4 mx-auto">
             <div class="w-full px-4 py-4 flex items-center justify-between">
@@ -47,7 +42,6 @@
                     </span>
                 </div>
 
-                <!-- Nav -->
                 <nav aria-label="Navigation principale" class="hidden sm:block">
                     <ul class="list-none flex gap-3 m-0 p-0 items-center">
                         <li>
@@ -70,7 +64,6 @@
 
     <main class="w-full">
 
-        <!-- ===== HERO / INTRO ===== -->
         <section id="intro" data-aos="zoom-out"
             class="relative bg-[url('img/montain.jpg')] bg-cover bg-center bg-no-repeat h-[calc(100vh-72px)] flex items-center justify-center">
             <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-[#050816]"></div>
@@ -96,7 +89,6 @@
             </div>
         </section>
 
-        <!-- ===== À PROPOS ===== -->
         <section data-aos="fade-up" class="py-16">
             <div class="max-w-5xl mx-auto px-4">
                 <div class="flex flex-col items-center mb-10">
@@ -131,7 +123,6 @@
                                     <img src="img/github.png" alt="github" class="w-6 h-6 invert brightness-0" />
                                 </a>
 
-                                </a>
                                 <a target="_blank"
                                     href="https://www.linkedin.com/in/chiara-olivieri-development-webdevelopment-creativity"
                                     class="inline-flex w-10 h-10 items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-sky-500/10 hover:border-sky-400 transition">
@@ -166,7 +157,6 @@
             </div>
         </section>
 
-        <!-- ===== FORMATION ===== -->
         <section data-aos="fade-up" class="py-16">
             <div class="max-w-5xl mx-auto px-4">
                 <div class="flex flex-col items-center mb-10">
@@ -206,7 +196,6 @@
             </div>
         </section>
 
-        <!-- ===== EXPÉRIENCES ===== -->
         <section data-aos="fade-up" class="py-16">
             <div class="max-w-5xl mx-auto px-4">
                 <div class="flex flex-col items-center mb-10">
@@ -261,7 +250,6 @@
             </div>
         </section>
 
-        <!-- ===== COMPÉTENCES ===== -->
         <section data-aos="fade-up" id="competences" class="py-16">
             <div class="max-w-5xl mx-auto px-4">
                 <div class="flex flex-col items-center mb-10">
@@ -274,7 +262,6 @@
                     <div class="mt-3 h-[2px] w-16 bg-gradient-to-r from-sky-400 to-purple-400 rounded-full"></div>
                 </div>
 
-                <!-- SOFT SKILLS -->
                 <div class="w-full bg-transparent py-6">
                     <h3 class="text-2xl font-semibold mb-6 text-center text-slate-100">
                         Soft Skills
@@ -307,7 +294,6 @@
                     </div>
                 </div>
 
-                <!-- HARD SKILLS -->
                 <div class="mt-12 overflow-hidden">
                     <div class="relative">
                         <h3 class="text-2xl font-semibold mb-6 text-center text-slate-100">
@@ -315,8 +301,7 @@
                         </h3>
 
                         <div class="pause-on-hover">
-                            <div class="flex gap-6 animate-scroll-x pl-20 pr-20">
-                                <!-- HTML -->
+                            <div class="flex w-max gap-6 animate-scroll-x pl-20 pr-20">
                                 <div
                                     class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
                                     <img src="img/html.png" alt="HTML" class="w-full h-full object-contain">
@@ -326,27 +311,24 @@
                                     </div>
                                 </div>
 
-                                <!-- CSS -->
                                 <div
                                     class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
-                                    <img src="img/css.svg.png" alt="CSS" class="w-full h-full object-contain">
+                                    <img src="img/css.png" alt="CSS" class="w-full h-full object-contain">
                                     <div
                                         class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
                                         CSS
                                     </div>
                                 </div>
 
-                                <!-- GitHub -->
                                 <div
                                     class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
-                                    <img src="img/github.png" alt="GitHub" class="w-full h-full object-contain">
+                                    <img src="img/github.png" alt="GitHub" class="w-full invert h-full object-contain">
                                     <div
                                         class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
                                         GitHub
                                     </div>
                                 </div>
 
-                                <!-- JS -->
                                 <div
                                     class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
                                     <img src="img/js.png" alt="JavaScript" class="w-full h-full object-contain">
@@ -356,7 +338,6 @@
                                     </div>
                                 </div>
 
-                                <!-- SQL -->
                                 <div
                                     class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
                                     <img src="img/sql.jpeg" alt="SQL" class="w-full h-full object-contain">
@@ -366,7 +347,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Python -->
                                 <div
                                     class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
                                     <img src="img/python.png" alt="Python" class="w-full h-full object-contain">
@@ -376,7 +356,15 @@
                                     </div>
                                 </div>
 
-                                <!-- Angular -->
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/react.png" alt="React" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        React
+                                    </div>
+                                </div>
+
                                 <div
                                     class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
                                     <img src="img/angular.png" alt="Angular" class="w-full h-full object-contain">
@@ -386,7 +374,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Figma -->
                                 <div
                                     class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
                                     <img src="img/Figma.png" alt="Figma" class="w-full h-full object-contain scale-75">
@@ -396,7 +383,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Adobe -->
                                 <div
                                     class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
                                     <img src="img/adobe.jpeg" alt="Adobe" class="w-full h-full object-contain">
@@ -406,7 +392,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Procreate -->
                                 <div
                                     class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
                                     <img src="img/procreate.jpg" alt="Procreate" class="w-full h-full object-contain">
@@ -416,7 +401,6 @@
                                     </div>
                                 </div>
 
-                                <!-- SketchUp -->
                                 <div
                                     class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
                                     <img src="img/sketchup.jpg" alt="SketchUp" class="w-full h-full object-contain">
@@ -426,7 +410,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Archicad -->
                                 <div
                                     class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
                                     <img src="img/archicad.png" alt="Archicad"
@@ -437,7 +420,15 @@
                                     </div>
                                 </div>
 
-                                <!-- Revit -->
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/autocad.png" alt="Autocad"
+                                        class="w-full h-full object-contain scale-75">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Autocad
+                                    </div>
+                                </div>
                                 <div
                                     class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
                                     <img src="img/revit.png" alt="Revit" class="w-full h-full object-contain">
@@ -447,7 +438,6 @@
                                     </div>
                                 </div>
 
-                                <!-- D5 Render -->
                                 <div
                                     class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
                                     <img src="img/d5.png" alt="D5Render" class="w-full h-full object-contain">
@@ -457,6 +447,295 @@
                                     </div>
                                 </div>
 
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/html.png" alt="HTML" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        HTML
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/css.png" alt="CSS" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        CSS
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/github.png" alt="GitHub" class="w-full invert h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        GitHub
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/js.png" alt="JavaScript" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        JavaScript
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/sql.jpeg" alt="SQL" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        SQL
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/python.png" alt="Python" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Python
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/react.png" alt="React" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        React
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/angular.png" alt="Angular" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Angular
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/Figma.png" alt="Figma" class="w-full h-full object-contain scale-75">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Figma
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/adobe.jpeg" alt="Adobe" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Adobe
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/procreate.jpg" alt="Procreate" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Procreate
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/sketchup.jpg" alt="SketchUp" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        SketchUp
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/archicad.png" alt="Archicad"
+                                        class="w-full h-full object-contain scale-75">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Archicad
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/autocad.png" alt="Autocad"
+                                        class="w-full h-full object-contain scale-75">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Autocad
+                                    </div>
+                                </div>
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/revit.png" alt="Revit" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Revit
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/d5.png" alt="D5Render" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        D5 Render
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/html.png" alt="HTML" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        HTML
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/css.png" alt="CSS" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        CSS
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/github.png" alt="GitHub" class="w-full invert h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        GitHub
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/js.png" alt="JavaScript" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        JavaScript
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/sql.jpeg" alt="SQL" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        SQL
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/python.png" alt="Python" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Python
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/react.png" alt="React" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        React
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/angular.png" alt="Angular" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Angular
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/Figma.png" alt="Figma" class="w-full h-full object-contain scale-75">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Figma
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/adobe.jpeg" alt="Adobe" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Adobe
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/procreate.jpg" alt="Procreate" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Procreate
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/sketchup.jpg" alt="SketchUp" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        SketchUp
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/archicad.png" alt="Archicad"
+                                        class="w-full h-full object-contain scale-75">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Archicad
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/autocad.png" alt="Autocad"
+                                        class="w-full h-full object-contain scale-75">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Autocad
+                                    </div>
+                                </div>
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/revit.png" alt="Revit" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        Revit
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative w-20 h-20 bg-[#0b1020] rounded-xl shadow-md flex items-center justify-center flex-shrink-0 p-2 overflow-hidden border border-white/10">
+                                    <img src="img/d5.png" alt="D5Render" class="w-full h-full object-contain">
+                                    <div
+                                        class="absolute inset-x-0 bottom-0 bg-black/40 text-white text-[10px] text-center font-semibold py-0.5">
+                                        D5 Render
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -464,7 +743,6 @@
             </div>
         </section>
 
-        <!-- ===== CONTACT ===== -->
         <section data-aos="fade-up" class="py-16">
             <div class="max-w-5xl mx-auto px-4">
                 <div class="flex flex-col items-center mb-8">
@@ -491,7 +769,6 @@
         </section>
     </main>
 
-    <!-- ===== FOOTER ===== -->
     <footer class="border-t border-white/10 bg-[#050816]/95 w-full text-slate-300">
         <div class="mx-auto p-5 sm:p-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
             <div class="text-left">
@@ -512,20 +789,22 @@
                 </ul>
             </div>
 
-            <div class="text-left sm:text-right text-sm">
-                <h3 class="text-[15px] mb-2 font-semibold text-slate-100">Contact</h3>
-                <p class="my-1.5">
-                    <a href="mailto:chiara.olivieri@epitech.eu"
-                        class="text-inherit no-underline transition-opacity hover:opacity-70">
-                        chiara.olivieri@epitech.eu
-                    </a>
+            <div class="text-left sm:text-right">
+                <p class="text-[15px] font-semibold text-slate-100 mb-2">
+                    Développé par Chiara Olivieri
+                </p>
+                <p class="text-xs text-slate-400">
+                    Propulsé par HTML, Tailwind CSS, et une bonne dose de passion.
                 </p>
             </div>
         </div>
     </footer>
-
     <script>
-        AOS.init();
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+        });
     </script>
 </body>
 
