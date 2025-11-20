@@ -13,10 +13,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #050816; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050816;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
 
         .swiper {
             width: 100%;
@@ -34,7 +46,7 @@
             flex-direction: column;
             text-decoration: none;
             color: inherit;
-            
+
             width: 85%;
             height: auto;
             border-radius: 16px;
@@ -49,34 +61,36 @@
 
         .swiper-slide .image-container {
             width: 100%;
-            aspect-ratio: 21/9; 
+            aspect-ratio: 21/9;
             overflow: hidden;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .swiperCreative .swiper-slide .image-container {
-            aspect-ratio: 1/1; 
+            aspect-ratio: 1/1;
         }
 
         @media (min-width: 1024px) {
-            
+
             .swiperWeb .swiper-slide {
-                width: 75%; 
+                width: 75%;
             }
+
             .swiper-slide .image-container {
-                height: 300px; 
+                height: 300px;
             }
-            
+
             .swiperCreative .swiper-slide {
-                width: 400px; 
-                height: 400px; 
-                aspect-ratio: 1/1; 
-                flex-direction: row; 
-            }
-            .swiperCreative .swiper-slide .image-container {
-                height: 100%; 
+                width: 400px;
+                height: 400px;
                 aspect-ratio: 1/1;
-                border-bottom: none; 
+                flex-direction: row;
+            }
+
+            .swiperCreative .swiper-slide .image-container {
+                height: 100%;
+                aspect-ratio: 1/1;
+                border-bottom: none;
             }
         }
 
@@ -84,26 +98,26 @@
             display: block;
             width: 100%;
             height: 100%;
-            object-fit: cover; 
-            object-position: center; 
-            transition: transform 0.3s ease; 
-            background-color: transparent; 
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.3s ease;
+            background-color: transparent;
         }
 
         .swiperWeb .swiper-slide img {
-            object-position: top; 
+            object-position: top;
         }
 
         .swiperWeb .swiper-slide:hover img {
-            transform: scale(1.02); 
+            transform: scale(1.02);
         }
-        
+
         .swiperCreative .swiper-slide img {
-            object-fit: cover; 
-            transform: none !important; 
-            object-position: center; 
+            object-fit: cover;
+            transform: none !important;
+            object-position: center;
         }
-        
+
         .swiperCreative .text-content {
             position: absolute;
             bottom: 0;
@@ -113,17 +127,28 @@
             background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
             z-index: 10;
         }
-        
+
         .swiper-slide:hover {
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); 
-            transform: translateY(-5px); 
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
         }
 
-        .swiper-pagination-bullet { background: white; opacity: 0.3; }
-        .swiper-pagination-bullet-active { background: #38bdf8; opacity: 1; }
-        
-        .swiper-button-next-web, .swiper-button-prev-web {
-            color: #38bdf8; 
+        .swiper-pagination-bullet {
+            background: white;
+            opacity: 0.3;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #38bdf8;
+            opacity: 1;
+        }
+
+        /* Styles génériques pour les flèches du Swiper */
+        .swiper-button-next-web,
+        .swiper-button-prev-web,
+        .swiper-button-next-creative,
+        .swiper-button-prev-creative {
+            color: #38bdf8;
             width: 35px;
             height: 35px;
             background-color: rgba(11, 16, 32, 0.8);
@@ -132,21 +157,35 @@
             top: 50%;
             transform: translateY(-50%) scale(0.8);
             opacity: 0.8;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             z-index: 100;
         }
 
-        .swiper-button-next-web:hover, .swiper-button-prev-web:hover {
+        .swiper-button-next-web:hover,
+        .swiper-button-prev-web:hover,
+        .swiper-button-next-creative:hover,
+        .swiper-button-prev-creative:hover {
             opacity: 1;
             transform: translateY(-50%) scale(1);
             background-color: rgba(56, 189, 248, 0.1);
         }
-        
-        .swiper-button-next-web:after, .swiper-button-prev-web:after {
-            font-size: 16px !important; 
+
+        .swiper-button-next-web:after,
+        .swiper-button-prev-web:after,
+        .swiper-button-next-creative:after,
+        .swiper-button-prev-creative:after {
+            font-size: 16px !important;
             font-weight: 900;
         }
         
+        /* Ajustement de la position des flèches pour les slides créatives sur grand écran */
+        @media (min-width: 1024px) {
+            .swiperCreative .swiper-button-next-creative,
+            .swiperCreative .swiper-button-prev-creative {
+                top: 50%; /* Centre sur la carte de 400px de haut */
+                transform: translateY(-50%);
+            }
+        }
     </style>
 </head>
 
@@ -161,7 +200,9 @@
             <nav class="hidden sm:block">
                 <ul class="flex gap-3 items-center">
                     <li>
-                        <a href="../Presentation/index.html" class="text-sm text-sky-300 px-3 py-1.5 rounded-full border border-sky-500/70 bg-sky-500/10 hover:bg-sky-500/20 hover:text-sky-50 transition">Mon parcours</a>
+                        <a href="../Presentation/index.html"
+                            class="text-sm text-sky-300 px-3 py-1.5 rounded-full border border-sky-500/70 bg-sky-500/10 hover:bg-sky-500/20 hover:text-sky-50 transition">Mon
+                            parcours</a>
                     </li>
                 </ul>
             </nav>
@@ -171,14 +212,14 @@
     <main class="w-full py-16 space-y-24 overflow-hidden">
 
         <section id="projets-web" class="w-full max-w-[1600px] mx-auto px-4">
-            
+
             <div class="flex flex-col items-center mb-10" data-aos="fade-down">
                 <p class="text-xs tracking-[0.35em] uppercase text-purple-400 mb-2">Portfolio Tech</p>
                 <h2 class="text-3xl sm:text-5xl font-semibold text-slate-50 text-center">PROJETS DEV</h2>
                 <div class="mt-3 h-[2px] w-16 bg-gradient-to-r from-purple-400 to-sky-400 rounded-full"></div>
             </div>
-            
-            <div class="swiper-web-container" data-aos="fade-up"> 
+
+            <div class="swiper-web-container" data-aos="fade-up">
                 <div class="swiper swiperWeb">
                     <div class="swiper-wrapper">
 
@@ -186,14 +227,23 @@
                             <div class="image-container">
                                 <img src="./img/projet-1.png" alt="Projet 1" />
                             </div>
-                            <div class="p-6 md:p-8 flex-grow"> 
-                                <h3 class="text-xl md:text-2xl font-bold text-white mb-1 group-hover:text-sky-400 transition">Site d'imprimante - Site vitrine pour le Hackathon Azuréen 2025</h3>
-                                <div class="flex flex-wrap gap-1.5 mb-2"> <span class="px-1.5 py-0.5 text-xs font-bold rounded bg-yellow-500/20 text-yellow-300 border border-yellow-500/30">PRIX DE L'INNOVATION</span>
-                                    <span class="px-1.5 py-0.5 text-xs font-bold rounded bg-sky-500/20 text-sky-300 border border-sky-500/30">REACT</span>
-                                    <span class="px-1.5 py-0.5 text-xs font-bold rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">VITE.JS</span>
+                            <div class="p-6 md:p-8 flex-grow">
+                                <h3
+                                    class="text-xl md:text-2xl font-bold text-white mb-1 group-hover:text-sky-400 transition">
+                                    Site d'imprimante - Site vitrine pour le Hackathon Azuréen 2025</h3>
+                                <div class="flex flex-wrap gap-1.5 mb-2"> <span
+                                        class="px-1.5 py-0.5 text-xs font-bold rounded bg-yellow-500/20 text-yellow-300 border border-yellow-500/30">PRIX
+                                        DE L'INNOVATION</span>
+                                    <span
+                                        class="px-1.5 py-0.5 text-xs font-bold rounded bg-sky-500/20 text-sky-300 border border-sky-500/30">REACT</span>
+                                    <span
+                                        class="px-1.5 py-0.5 text-xs font-bold rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">VITE.JS</span>
                                 </div>
-                                <p class="text-xs md:text-sm line-clamp-3"> Nous avons développé une solution d’automatisation pour une PME gérant plus de 300 demandes clients par jour. J’ai défini le design fonctionnel de la plateforme et démontré comment intégrer facilement notre module d’automatisation dans un site web existant.
-Technologies : Azure AI Foundry, React, Vite.js.              </p>
+                                <p class="text-xs md:text-sm line-clamp-3"> Nous avons développé une solution
+                                    d’automatisation pour une PME gérant plus de 300 demandes clients par jour. J’ai
+                                    défini le design fonctionnel de la plateforme et démontré comment intégrer facilement
+                                    notre module d’automatisation dans un site web existant.
+                                    Technologies : Azure AI Foundry, React, Vite.js. </p>
                             </div>
                         </a>
 
@@ -202,13 +252,20 @@ Technologies : Azure AI Foundry, React, Vite.js.              </p>
                                 <img src="./img/projet-2.png" alt="Projet 2" />
                             </div>
                             <div class="p-6 md:p-8 flex-grow">
-                                <h3 class="text-xl md:text-2xl font-bold text-white mb-1 group-hover:text-sky-400 transition">Déploiement automatisé de serveurs</h3>
-                                <div class="flex flex-wrap gap-1.5 mb-2"> <span class="px-1.5 py-0.5 text-xs font-bold rounded bg-red-500/20 text-red-300 border border-red-500/30">Angular</span>
-                                    <span class="px-1.5 py-0.5 text-xs font-bold rounded bg-pink-500/20 text-pink-300 border border-pink-500/30">Tailwind</span>
-                                    <span class="px-1.5 py-0.5 text-xs font-bold rounded bg-gray-500/20 text-gray-300 border border-gray-500/30">Docker</span>
+                                <h3
+                                    class="text-xl md:text-2xl font-bold text-white mb-1 group-hover:text-sky-400 transition">
+                                    Déploiement automatisé de serveurs</h3>
+                                <div class="flex flex-wrap gap-1.5 mb-2"> <span
+                                        class="px-1.5 py-0.5 text-xs font-bold rounded bg-red-500/20 text-red-300 border border-red-500/30">Angular</span>
+                                    <span
+                                        class="px-1.5 py-0.5 text-xs font-bold rounded bg-pink-500/20 text-pink-300 border border-pink-500/30">Tailwind</span>
+                                    <span
+                                        class="px-1.5 py-0.5 text-xs font-bold rounded bg-gray-500/20 text-gray-300 border border-gray-500/30">Docker</span>
 
                                 </div>
-                                <p class="text-xs md:text-sm line-clamp-3">  Projet personnel en binôme : déploiement automatisé de serveurs Minecraft sur Docker à partir de templates, pour lequel j’ai développé la partie Front-end.              </p>
+                                <p class="text-xs md:text-sm line-clamp-3"> Projet personnel en binôme : déploiement
+                                    automatisé de serveurs Minecraft sur Docker à partir de templates, pour lequel j’ai
+                                    développé la partie Front-end. </p>
                             </div>
                         </a>
 
@@ -217,32 +274,42 @@ Technologies : Azure AI Foundry, React, Vite.js.              </p>
                                 <img src="./img/projet-3.png" alt="Projet 3" />
                             </div>
                             <div class="p-6 md:p-8 flex-grow">
-                                <h3 class="text-xl md:text-2xl font-bold text-white mb-1 group-hover:text-sky-400 transition">Site d'offres d'emplois</h3>
-                                <div class="flex flex-wrap gap-1.5 mb-2"> <span class="px-1.5 py-0.5 text-xs font-bold rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">HTML</span>
-                                    <span class="px-1.5 py-0.5 text-xs font-bold rounded bg-orange-500/20 text-orange-300 border border-orange-500/30">CSS</span>
-                                    <span class="px-1.5 py-0.5 text-xs font-bold rounded bg-yellow-500/20 text-yellow-300 border border-yellow-500/30">JS</span>
-                                    <span class="px-1.5 py-0.5 text-xs font-bold rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">SQL</span>
-                                    <span class="px-1.5 py-0.5 text-xs font-bold rounded bg-green-500/20 text-green-300 border border-green-500/30">MySQL</span>
-                                    <span class="px-1.5 py-0.5 text-xs font-bold rounded bg-stone-500/20 text-stone-300 border border-stone-500/30">Express.js</span>
+                                <h3
+                                    class="text-xl md:text-2xl font-bold text-white mb-1 group-hover:text-sky-400 transition">
+                                    Site d'offres d'emplois</h3>
+                                <div class="flex flex-wrap gap-1.5 mb-2"> <span
+                                        class="px-1.5 py-0.5 text-xs font-bold rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">HTML</span>
+                                    <span
+                                        class="px-1.5 py-0.5 text-xs font-bold rounded bg-orange-500/20 text-orange-300 border border-orange-500/30">CSS</span>
+                                    <span
+                                        class="px-1.5 py-0.5 text-xs font-bold rounded bg-yellow-500/20 text-yellow-300 border border-yellow-500/30">JS</span>
+                                    <span
+                                        class="px-1.5 py-0.5 text-xs font-bold rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">SQL</span>
+                                    <span
+                                        class="px-1.5 py-0.5 text-xs font-bold rounded bg-green-500/20 text-green-300 border border-green-500/30">MySQL</span>
+                                    <span
+                                        class="px-1.5 py-0.5 text-xs font-bold rounded bg-stone-500/20 text-stone-300 border border-stone-500/30">Express.js</span>
                                 </div>
-                                <p class="text-xs md:text-sm line-clamp-3"> Projet scolaire en trinôme : Création d'un site d'offres d'emplois pour les recruteurs et chercheurs d'emplois. Réalisation de la partie Front-end et Back-end du site.              </p>
+                                <p class="text-xs md:text-sm line-clamp-3"> Projet scolaire en trinôme : Création d'un
+                                    site d'offres d'emplois pour les recruteurs et chercheurs d'emplois. Réalisation de
+                                    la partie Front-end et Back-end du site. </p>
                             </div>
                         </div>
 
                     </div>
-                    
+
                     <div class="swiper-button-next swiper-button-next-web"></div>
                     <div class="swiper-button-prev swiper-button-prev-web"></div>
-                    
+
                     <div class="swiper-pagination swiper-pagination-web"></div>
                 </div>
-            </div> 
-            </section>
+            </div>
+        </section>
 
----
+        ---
 
         <section id="projets-creatifs" class="w-full max-w-[1600px] mx-auto px-4 border-t border-white/5 pt-16">
-            
+
             <div class="flex flex-col items-center mb-10" data-aos="fade-down">
                 <p class="text-xs tracking-[0.35em] uppercase text-sky-400 mb-2">Artistique</p>
                 <h2 class="text-3xl sm:text-5xl font-semibold text-slate-50 text-center">UNIVERS CRÉATIF</h2>
@@ -252,43 +319,52 @@ Technologies : Azure AI Foundry, React, Vite.js.              </p>
             <div class="swiper swiperCreative" data-aos="fade-up">
                 <div class="swiper-wrapper">
 
-                    <a href="https://www.behance.net/moodboard/222055911/Peintures-Ralisations-personnelles" target="_blank" class="swiper-slide group">
+                    <a href="https://www.behance.net/moodboard/222055911/Peintures-Ralisations-personnelles"
+                        target="_blank" class="swiper-slide group">
                         <div class="image-container">
                             <img src="./img/macaron.jpg" alt="Peintures" />
                         </div>
                         <div class="text-content">
-                            <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">Peintures (Acrylique)</h3>
+                            <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">Peintures
+                                (Acrylique)</h3>
                         </div>
                     </a>
 
-                    <a href="https://www.behance.net/moodboard/222055855/Projets-darchitecture" target="_blank" class="swiper-slide group">
+                    <a href="https://www.behance.net/moodboard/222055855/Projets-darchitecture" target="_blank"
+                        class="swiper-slide group">
                         <div class="image-container">
                             <img src="./img/archi.jpg" alt="Architecture" />
                         </div>
                         <div class="text-content">
-                            <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">Projets d'Architecture (3D)</h3>
+                            <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">Projets
+                                d'Architecture (3D)</h3>
                         </div>
                     </a>
 
-                    <a href="https://www.behance.net/moodboard/222055929/Crations-digitales-Ralisations-personnelles" target="_blank" class="swiper-slide group">
+                    <a href="https://www.behance.net/moodboard/222055929/Crations-digitales-Ralisations-personnelles"
+                        target="_blank" class="swiper-slide group">
                         <div class="image-container">
                             <img src="./img/fraise.jpg" alt="Créations digitales" />
                         </div>
                         <div class="text-content">
-                            <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">Créations Digitales (PS/AI)</h3>
+                            <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">Créations
+                                Digitales (PS/AI)</h3>
                         </div>
                     </a>
 
-                    <a href="https://www.behance.net/moodboard/222055957/Projets-Twitch" target="_blank" class="swiper-slide group">
+                    <a href="https://www.behance.net/moodboard/222055957/Projets-Twitch" target="_blank"
+                        class="swiper-slide group">
                         <div class="image-container">
                             <img src="./img/mk.jpg" alt="Twitch" />
                         </div>
                         <div class="text-content">
-                            <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">Projets Twitch (Design)</h3>
+                            <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">Projets Twitch
+                                (Design)</h3>
                         </div>
                     </a>
-                    
-                    <a href="https://www.behance.net/moodboard/fraisechoc-lien-hypothetique" target="_blank" class="swiper-slide group">
+
+                    <a href="https://www.behance.net/moodboard/fraisechoc-lien-hypothetique" target="_blank"
+                        class="swiper-slide group">
                         <div class="image-container">
                             <img src="./img/fraisechoc.jpg" alt="Illustration Fraisechoc" />
                         </div>
@@ -296,15 +372,19 @@ Technologies : Azure AI Foundry, React, Vite.js.              </p>
                             <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">Dessins</h3>
                         </div>
                     </a>
-                    
-                    </div>
+
+                </div>
+                
+                <div class="swiper-button-next swiper-button-next-creative"></div>
+                <div class="swiper-button-prev swiper-button-prev-creative"></div>
+                
                 <div class="swiper-pagination swiper-pagination-creative"></div>
             </div>
         </section>
 
     </main>
 
-<footer class="border-t border-white/10 bg-[#050816]/95 w-full text-slate-300">
+    <footer class="border-t border-white/10 bg-[#050816]/95 w-full text-slate-300">
         <div class="mx-auto p-5 sm:p-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
             <div class="text-left">
                 <h3 class="text-[15px] mb-2 font-semibold text-slate-100">Liens</h3>
@@ -325,10 +405,9 @@ Technologies : Azure AI Foundry, React, Vite.js.              </p>
             </div>
 
             <div class="text-left sm:text-right text-sm">
-                <h3 class="text-[15px] mb-2 font-semibold text-slate-100">Contact</h3>
+                <h3 class="text-[15px] font-semibold text-slate-100 mb-2">Contact</h3>
                 <p class="my-1.5">
-                    <a href="mailto:chiara.olivieri@epitech.eu"
-                        class="text-inherit no-underline transition-opacity hover:opacity-70">
+                    <a href="mailto:chiara.olivieri@epitech.eu" class="text-inherit no-underline transition-opacity hover:opacity-70">
                         chiara.olivieri@epitech.eu
                     </a>
                 </p>
@@ -346,14 +425,14 @@ Technologies : Azure AI Foundry, React, Vite.js.              </p>
             effect: "coverflow",
             grabCursor: true,
             centeredSlides: true,
-            slidesPerView: "auto", 
-            spaceBetween: 20, 
+            slidesPerView: "auto",
+            spaceBetween: 20,
             coverflowEffect: {
-                rotate: 0,      
+                rotate: 0,
                 stretch: 0,
-                depth: 150,     
+                depth: 150,
                 modifier: 1,
-                slideShadows: true, 
+                slideShadows: true,
             },
             keyboard: true,
         };
@@ -361,12 +440,12 @@ Technologies : Azure AI Foundry, React, Vite.js.              </p>
         new Swiper(".swiperWeb", {
             ...baseConfig,
             spaceBetween: 30,
-            loop: true, 
-            autoplay: { 
+            loop: true,
+            autoplay: {
                 delay: 4000,
                 disableOnInteraction: false,
             },
-            navigation: { 
+            navigation: {
                 nextEl: ".swiper-button-next-web",
                 prevEl: ".swiper-button-prev-web",
             },
@@ -378,7 +457,11 @@ Technologies : Azure AI Foundry, React, Vite.js.              </p>
 
         new Swiper(".swiperCreative", {
             ...baseConfig,
-            initialSlide: 2, 
+            initialSlide: 2,
+            navigation: {
+                nextEl: ".swiper-button-next-creative",
+                prevEl: ".swiper-button-prev-creative",
+            },
             pagination: {
                 el: ".swiper-pagination-creative",
                 clickable: true,
@@ -386,4 +469,5 @@ Technologies : Azure AI Foundry, React, Vite.js.              </p>
         });
     </script>
 </body>
+
 </html>
