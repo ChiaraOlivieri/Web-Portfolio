@@ -20,6 +20,20 @@
             .pause-on-hover:hover .animate-scroll-x {
                 animation-play-state: paused;
             }
+
+            /* Styles pour l'animation du menu burger */
+            .hamburger-line {
+                @apply block h-0.5 w-6 bg-slate-100 transform transition duration-300 ease-in-out;
+            }
+            .hamburger.open .top-line {
+                @apply rotate-45 translate-y-2;
+            }
+            .hamburger.open .middle-line {
+                @apply opacity-0;
+            }
+            .hamburger.open .bottom-line {
+                @apply -rotate-45 -translate-y-2;
+            }
         }
     </style>
 
@@ -41,17 +55,30 @@
                     </span>
                 </div>
 
-                <nav aria-label="Navigation principale" class="hidden sm:block">
-                    <ul class="list-none flex gap-3 m-0 p-0 items-center">
+                <button id="menu-toggle" class="hamburger sm:hidden p-2 rounded-md hover:bg-white/10 transition" aria-expanded="false" aria-controls="mobile-menu">
+                    <div class="space-y-1.5">
+                        <span class="hamburger-line top-line"></span>
+                        <span class="hamburger-line middle-line"></span>
+                        <span class="hamburger-line bottom-line"></span>
+                    </div>
+                </button>
+
+                <nav id="mobile-menu" aria-label="Navigation principale" 
+                     class="hidden absolute top-full left-0 w-full bg-[#050816] border-t border-white/10 
+                            sm:static sm:w-auto sm:block sm:border-none sm:bg-transparent 
+                            transition-all duration-300 ease-in-out opacity-0 translate-y-[-10px] sm:opacity-100 sm:translate-y-0">
+                    <ul class="list-none flex flex-col sm:flex-row gap-3 m-0 p-4 sm:p-0 items-start sm:items-center">
                         <li>
                             <a href="#competences"
-                                class="text-sm text-slate-200 px-3 py-1.5 rounded-full border border-white/10 hover:border-sky-400 hover:bg-sky-400/10 transition">
+                                class="block w-full text-base sm:text-sm text-slate-200 px-1 py-1 sm:px-3 sm:py-1.5 
+                                sm:rounded-full sm:border sm:border-white/10 sm:hover:border-sky-400 sm:hover:bg-sky-400/10 transition">
                                 Compétences
                             </a>
                         </li>
                         <li>
                             <a href="../Portfolio/portfolio.html"
-                                class="text-sm font-semibold text-sky-400 px-3 py-1.5 rounded-full border border-sky-500/60 bg-sky-500/10 hover:bg-sky-500/20 transition">
+                                class="block w-full text-base sm:text-sm font-semibold text-sky-400 px-1 py-1 sm:px-3 sm:py-1.5
+                                sm:rounded-full sm:border sm:border-sky-500/60 sm:bg-sky-500/10 sm:hover:bg-sky-500/20 transition">
                                 Mes projets
                             </a>
                         </li>
@@ -798,11 +825,34 @@
             </div>
         </div>
     </footer>
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
+<script>
+        AOS.init();
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+
+            // Basculer la classe 'open' sur le bouton pour l'animation de l'icône
+            menuToggle.classList.toggle('open');
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+
+            // Basculer la visibilité et l'animation du menu
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                // Forcer un reflow pour que la transition se déclenche
+                void mobileMenu.offsetWidth; 
+                mobileMenu.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                mobileMenu.classList.remove('opacity-100', 'translate-y-0');
+                mobileMenu.classList.add('opacity-0', 'translate-y-[-10px]');
+                // Attendre la fin de la transition avant de masquer complètement
+                mobileMenu.addEventListener('transitionend', function handler() {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.removeEventListener('transitionend', handler);
+                }, { once: true });
+            }
         });
     </script>
 </body>
